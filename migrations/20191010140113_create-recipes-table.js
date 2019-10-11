@@ -5,15 +5,16 @@ exports.up = function (knex) {
             tbl.text('name', 128)
                 .unique()
                 .notNullable();
+            tbl.text('instructions', 1000)
         })
         .createTable('ingredients', tbl => {
             tbl.increments();
             tbl.integer('recipe_id');
             tbl.float('quantity')
-                .notNullable()
+                .notNullable();
             tbl.text('name', 128)
                 .unique()
-                .notNullable()
+                .notNullable();
         })
 };
 
